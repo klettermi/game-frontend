@@ -5,7 +5,6 @@ function set_words(){
     })
         .then((response) => response.json())
         .then((result) => {
-            console.log(result);
             if(result.success){
                 var str_html = "";
                 for(var i = 0; i < result.data.length; i++){
@@ -38,7 +37,6 @@ function select_word(){
     })
         .then((response) => response.json())
         .then((result) => {
-            console.log(result);
             if(result.success){
                 localStorage.setItem("id", result.data)
                 location.href='../start.html'
@@ -57,13 +55,12 @@ function set_blank(){
     })
         .then((response) => response.json())
         .then((result) => {
-            console.log(result);
             if(result.success){
                 var str_html = "";
                 
                 var blank = `<div id= "answer", style="font-size: xx-large; margin: 20px; text-align: center;  display: inline-block;">__ __ __ __ __ __</div>`;
                 var oldAnswer = result.data;
-                console.log(oldAnswer)
+
                 for(let i = 0; i < oldAnswer.length; i++){
                     str_html += "__ ";
                 }
@@ -93,10 +90,6 @@ function start_game(){
     })
         .then((response) => response.json())
         .then((result) => {
-            console.log(result);
-            // 선택한 버튼 비활성화
-            
-            
             if(result.success){
                 // 게임에 이김
                 if(result.data.win){
@@ -117,15 +110,34 @@ function start_game(){
                     $('#answer').empty();
                     $('#answer').append(newAnswer);
                 }else{
-                    alert("선택하신 알파벳은 단어에 없습니다!");
+                    // alert("선택하신 알파벳은 단어에 없습니다!");
                 }
             
             }else{
-                alert(result.errors);
-                if(result.errors == "게임 오버")
+                if(result.errors == "게임 오버"){
+                    window.open("../lose.html", "new", "width=500,height=500,history=no,resizable=no,status=no,scrollbars=yes,menubar=no")
                     location.href= `../index.html`;
+                }
+                    
             }
         }) 
+}
+
+function restart(){
+    const id = localStorage.getItem("id");
+    const url = `http://localhost:8080/api/hangman/game_start/restart/`+id;
+    const button = event.target;
+
+    fetch(url, {
+        method: "POST",
+    })
+        .then((response) => response.json())
+        .then((result) => {
+            // disable 제거
+            btn_on();
+            // 다시 그려주고
+            set_blank();
+        })   
 }
 
 function btn_off() {
@@ -133,4 +145,15 @@ function btn_off() {
     button.style.backgroundColor = "grey";
     button.style.pointerEvents = "none";
     button.disabled = 'disabled';
+}
+
+function btn_on(){
+    var buttons = document.getElementsByClassName("letter");
+
+    for(var i = 0; i < buttons.length; i++){
+        buttons[i].style.backgroundColor = "darkkhaki";
+        buttons[i].style.pointerEvents = "auto";  
+        buttons[i].disabled=false;
+    }
+
 }

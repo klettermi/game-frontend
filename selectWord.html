@@ -13,9 +13,9 @@
             crossorigin="anonymous"></script>
     <link href="../static/css/default.css" rel="stylesheet"/>
 </head>
-<body onload="set_words()">
+<body onload="set_words();">
     <div style="text-align: center;">
-        <img src="../static/images/title.png" style="margin-top: 100px; margin-bottom: 10px;">
+        <a href="index.html"><img src="../static/images/title.png" style="margin-top: 100px; margin-bottom: 10px;"></a>
         <h3 style="margin-bottom: 50px;">3개의 단어 중 하나를 선택해주세요!</h3>
     </div>
 
@@ -29,7 +29,9 @@
         <div style="text-align: center;  display: inline-block;"> 
             <button onclick="select_word()" type="button" id="valueId" VALUE="CHINA" class="btn btn-lg" style="font-size: xx-large; padding: 10px 30px; margin-top: 100px; background-color:#BDB76B; color: white; margin: 15px;">CHINA</button>
         </div>
-
+    </div>
+    <div style="text-align: center; margin-top: 100px;">
+        <button onclick="set_words()" type="button" class="btn btn-success">새로운 단어들 보기</button>
     </div>
         
 <script src="../static/js/app/hangman.js"></script>
