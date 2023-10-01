@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <link href="../static/css/default.css" rel="stylesheet"/>
+</head>
+<body onload = "set_blank()">
+    <div style="text-align: center;">
+        <img src="../static/images/title.png" style="margin-top: 100px; margin-bottom: 20px;">
+        <div>
+            <img src="../static/images/step0.png" alt="Hangman Image" style="height: 20;width: 20; margin: 20px;"/>
+            <div id= "answer" style="font-size: xx-large; margin: 20px; text-align: center;  display: inline-block;"><div>__ __ __ __ __ __</div></div>
+            
+        </div>
+    </div>
+    <div class="wrapper" style="margin-top: 50px;">
+        <div class="alphabet">
+        <button onclick="start_game();btn_off()" id="alphabeta" class="letter" data-letter="a">A</button>
+        <button onclick="start_game();btn_off()" id="alphabetb" class="letter" data-letter="b">B</button>
+        <button onclick="start_game();btn_off()" id="alphabetc" class="letter" data-letter="c">C</button>
+        <button onclick="start_game();btn_off()" id="alphabetd" class="letter" data-letter="d">D</button>
+        <button onclick="start_game();btn_off()" id="alphabete" class="letter" data-letter="e">E</button>
+        <button onclick="start_game();btn_off()" id="alphabetf" class="letter" data-letter="f">F</button>
+        <button onclick="start_game();btn_off()" id="alphabetg" class="letter" data-letter="g">G</button>
+        <button onclick="start_game();btn_off()" id="alphabeth" class="letter" data-letter="h">H</button>
+        <button onclick="start_game();btn_off()" id="alphabeti" class="letter" data-letter="i">I</button>
+        <button onclick="start_game();btn_off()" id="alphabetj" class="letter" data-letter="j">J</button>
+        <button onclick="start_game();btn_off()" id="alphabetk" class="letter" data-letter="k">K</button>
+        <button onclick="start_game();btn_off()" id="alphabetl" class="letter" data-letter="l">L</button>
+        <button onclick="start_game();btn_off()" id="alphabetm" class="letter" data-letter="m">M</button>
+        <button onclick="start_game();btn_off()" id="alphabetn" class="letter" data-letter="n">N</button>
+        <button onclick="start_game();btn_off()" id="alphabeto" class="letter" data-letter="o">O</button>
+        <button onclick="start_game();btn_off()" id="alphabetp" class="letter" data-letter="p">P</button>
+        <button onclick="start_game();btn_off()" id="alphabetq" class="letter" data-letter="q">Q</button>
+        <button onclick="start_game();btn_off()" id="alphabetr" class="letter" data-letter="r">R</button>
+        <button onclick="start_game();btn_off()" id="alphabets" class="letter" data-letter="s">S</button>
+        <button onclick="start_game();btn_off()" id="alphabett" class="letter" data-letter="t">T</button>
+        <button onclick="start_game();btn_off()" id="alphabetu" class="letter" data-letter="u">U</button>
+        <button onclick="start_game();btn_off()" id="alphabetv" class="letter" data-letter="v">V</button>
+        <button onclick="start_game();btn_off()" id="alphabetw" class="letter" data-letter="w">W</button>
+        <button onclick="start_game();btn_off()" id="alphabetx" class="letter" data-letter="x">X</button>
+        <button onclick="start_game();btn_off()" id="alphabety" class="letter" data-letter="y">Y</button>
+        <button onclick="start_game();btn_off()" id="alphabetz" class="letter" data-letter="z">Z</button>
+        </div>
+        <div class="guess">
+        <ul class="guessed"></ul>
+        </div>
+  </div>
+  <script src="../static/js/app/hangman.js"></script>
+</body>
+</html>
