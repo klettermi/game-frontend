@@ -1,5 +1,5 @@
 function set_words(){
-    const url = `http://localhost:8080/api/hangman/setting_words`
+    const url = `http://ec2-13-124-84-199.ap-northeast-2.compute.amazonaws.com:8080/api/hangman/setting_words`
     fetch(url, {
         method: "GET",
     })
@@ -26,7 +26,7 @@ function set_words(){
 function select_word(){
     localStorage.clear();
     const word =  event.target.value;
-    const url = `http://localhost:8080/api/hangman/setting_word`
+    const url = `http://ec2-13-124-84-199.ap-northeast-2.compute.amazonaws.com:8080/api/hangman/setting_word`
     fetch(url, {
         method: "POST",
         headers: {
@@ -49,7 +49,7 @@ function select_word(){
 function set_blank(){
     const id = localStorage.getItem("id");
 
-    const url = `http://localhost:8080/api/hangman/setting_word/`+id;
+    const url = `http://ec2-13-124-84-199.ap-northeast-2.compute.amazonaws.com:8080/api/hangman/setting_word/`+id;
     fetch(url, {
         method: "GET",
     })
@@ -76,7 +76,7 @@ function set_blank(){
 
 function start_game(){
     const id = localStorage.getItem("id");
-    const url = `http://localhost:8080/api/hangman/game_start/`+id;
+    const url = `http://ec2-13-124-84-199.ap-northeast-2.compute.amazonaws.com:8080/api/hangman/game_start/`+id;
     const button = event.target;
     const alphabet = button.dataset.letter;
 
@@ -125,7 +125,7 @@ function start_game(){
 
 function restart(){
     const id = localStorage.getItem("id");
-    const url = `http://localhost:8080/api/hangman/game_start/restart/`+id;
+    const url = `http://ec2-13-124-84-199.ap-northeast-2.compute.amazonaws.com:8080/api/hangman/game_start/restart/`+id;
     const button = event.target;
 
     fetch(url, {
