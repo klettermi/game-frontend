@@ -1,1 +1,1 @@
-const BASE_URL = 'http://localhost:8080'
+const BASE_URL = 'http://ec2-13-124-84-199.ap-northeast-2.compute.amazonaws.com:8080'
