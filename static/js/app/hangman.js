@@ -138,6 +138,7 @@ function restart(){
     })
         .then((response) => response.json())
         .then((result) => {
+            console.log("재시작");
             // disable 제거
             btn_on();
             // 다시 그려주고
@@ -153,7 +154,7 @@ function restart(){
 
 function btn_off() {
     const button = event.target;
-    button.style.backgroundColor = "grey";
+    button.style.backgroundColor = "indianred";
     button.style.pointerEvents = "none";
     button.disabled = 'disabled';
 }
@@ -169,4 +170,8 @@ function btn_on(){
 
 }
 
-
+function reload_restart(){
+    if(location.reload){
+        restart();
+    }
+}
