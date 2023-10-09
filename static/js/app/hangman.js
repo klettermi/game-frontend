@@ -93,8 +93,8 @@ function start_game(){
             if(result.success){
                 // 게임에 이김
                 if(result.data.win){
-                    window.open("../game-frontend/win.html", "new", "width=500,height=500,history=no,resizable=no,status=no,scrollbars=yes,menubar=no")
-                    location.href= `../game-frontend/index.html`
+                    window.open('win.html', "new", "width=500,height=500,history=no,resizable=no,status=no,scrollbars=yes,menubar=no")
+                    location.href= 'index.html';
                 }
                 // 알파벳이 맞음
                 else if(result.data.correct){
@@ -120,8 +120,8 @@ function start_game(){
             }
             else{
                 if(result.errors == "게임 오버"){
-                    window.open("lose.html", "new", "width=500,height=500,history=no,resizable=no,status=no,scrollbars=yes,menubar=no")
-                    location.href= `index.html`;
+                    window.open('lose.html', "new", "width=500,height=500,history=no,resizable=no,status=no,scrollbars=yes,menubar=no")
+                    location.href='index.html';
                 }
                     
             }
