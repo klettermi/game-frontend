@@ -1,1 +1,1 @@
-const BASE_URL = 'http://migame.kro.kr:8080'
+const BASE_URL = 'https://migame.kro.kr:8080'
