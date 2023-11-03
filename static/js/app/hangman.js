@@ -111,7 +111,7 @@ function start_game(){
                     $('#answer').append(newAnswer);
                 }else{
                     const new_html = `
-                        <img src="static/images/step`+ (result.data.count) +`.png" alt="Hangman Image" style="height: 20;width: 20; margin: 20px;"/>
+                        <img src="/static/images/hmImage/step`+ (result.data.count) +`.png" alt="Hangman Image" style="height: 20;width: 20; margin: 20px;"/>
                         `;
                     $('#hangman_image').empty();
                     $('#hangman_image').append(new_html);
@@ -143,7 +143,7 @@ function restart(){
             // 다시 그려주고
             set_blank();
             const new_html = `
-                <img src="static/images/step0.png" alt="Hangman Image" style="height: 20;width: 20; margin: 20px;"/>
+                <img src="/static/images/hmImage/step0.png" alt="Hangman Image" style="height: 20;width: 20; margin: 20px;"/>
                 `;
             $('#hangman_image').empty();
             $('#hangman_image').append(new_html);
